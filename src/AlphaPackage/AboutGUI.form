@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="About"/>
+    <Property name="resizable" type="boolean" value="false"/>
+    <Property name="type" type="java.awt.Window$Type" editor="org.netbeans.modules.form.editors.EnumEditor">
+      <Value id="UTILITY"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="creditsJPanel" alignment="1" max="32767" attributes="0"/>
+                  <Component id="mainJScrollPane" alignment="1" pref="524" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="titleJLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="titleJLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="mainJScrollPane" min="-2" pref="202" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="creditsJPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="titleJLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tempus Sans ITC" size="24" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Print Queue Simulation"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="mainJScrollPane">
+      <Properties>
+        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="aboutJPanel">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="firstAboutJTextArea" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="firstAboutJTextArea" pref="958" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="firstAboutJTextArea">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ee" green="ee" red="ee" type="rgb"/>
+                </Property>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Grande" size="14" style="0"/>
+                </Property>
+                <Property name="lineWrap" type="boolean" value="true"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="1.PrintQueueSimulationGUI--the simulation driver class. A GUI-based JFrame that allows the user to set/select number of servers (printers),  set/select mean interarrival time, and set/select mean duration of each job. This class contain as instance variables and array of servers (printers), a queue and a random instance variable. It manage arrival of clients, serve them, enqueue and dequeue them in the queue and display the results.&#xa;2.Client--Each print job has an instance of this class. It contains a random number generator randomJobSize that generates the exponentially distributed job sizes with a mean of 100 pages. It is declared static because only one instance is needed to produce all the job sizes. Similarly, the static int nextId is used to generate identification numbers for all the jobs. The constructor uses the next Id counter to set the job id, and it uses the randomJobSize generator to set the jobSize. Then it prints one line of output, announcing that that job has arrived. The beginService () method assigns the server reference to the printer that invoked it and thenprints one line of output, announcing that the printing has begun. Similarly, the endService() method nullifies the server reference after printing one line of output that announces that the printing has ended.&#xa;3.Server--It has a random number generator randomMeanServiceRate that generates the normally distributed rates with mean 100.0 and standard deviation 20.0. It produces the meanServiceRate for each printer. In the run just shown, it produced the rates 89 for Printer A, 97 for Printer B, 106 for Printer C, and 128 for Printer D. Similarly, the random number generator randomServiceRate generates the normallydistributed rates for each print job. In the run just shown, it produced the rates 84 for Job #1, 87 for Job #3, and 92 for Job #5. Those came from a normal distribution with mean 89 (for Printer A). The standard deviation is set at 10 for each printer&apos;s distribution.The beginServing () method assigns the client reference to the client job that it is printing and obtains the normally distributed serviceRate from the randomServiceRate generator. Then it sends the beginService message to its client print job. Next, the assignment int serviceTime = (int)Math.ceil(client.getJobSize()/serviceRate);computes the time (number of seconds) that it will take to do the print job by dividing the job size (the number of pages) by the printing rate (pages per second). The integer ceiling of this ratio is used as acount of the number of seconds to elapse. This count is then added to the current time to initialize thetimeServiceEnds field of the Server object.&#xa;4.Random--extends java.utilRandom. Given above.&#xa;5.List classthat contains ListNodes and has a size() method.&#xa;6. Queue a class that extends List. Public method include at least enqueue, dequeue, and isEmpty().You may decide to implement the Queue class differently&#x2014;for example:ArrayList implementation.&#xa;7.Appropriate Exception classes.&#xa;8.Splash screen with which the program begins and an About form which describes the project among other info (copyright, warning, logo, etc.).&#xa;9.Javadocs, description of the program, and comments, comments everywhere.&#xa;10.Menus that synchronize with corresponding buttons and with at least the following menu choices: File with Open, Clear, Print, and Exit menu items. Statistics displaying all averages (see extra credit below). Help with About menu item for an About form.&#xa;11.The project starts with a Splash Screen that closes itself after so many seconds and it contain an About form activated from the Help menu."/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="creditsJPanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="versionJLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="317" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="createdJLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="closeJButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="copyrightJLabel" min="-2" pref="129" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="versionJLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="createdJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="closeJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="copyrightJLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="versionJLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="versionJLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="createdJLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Created: Illarion Eremenko"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="versionJLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Version: 1.3"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="closeJButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Close"/>
+            <Property name="toolTipText" type="java.lang.String" value="Close about form"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="closeJButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="copyrightJLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Copyright: Freeware "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="versionJLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Date: 03/1/2018"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
